@@ -1,6 +1,0 @@
-dblite> Database test_db created successfully.
-Command executed in 109 microseconds.
-create database test passed
-dblite> Database test_db dropped successfully.
-Command executed in 98 microseconds.
-drop database test passed

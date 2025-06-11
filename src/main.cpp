@@ -8,8 +8,9 @@
 int main(int argc,char* argv[]){
     terminal term;
     std::string line;
+    std::cout<<term.get_prompt();
+
     while(std::getline(std::cin,line)){
-         std::cout<<term.get_prompt();
         if(line.empty()) {
             std::cout << term.get_prompt();
             continue;
@@ -25,7 +26,7 @@ int main(int argc,char* argv[]){
             }catch(const std::exception& e){
                 std::cerr<<"Error: "<<e.what()<<std::endl;
             }
-        // std::cout<<term.get_prompt();
+        std::cout<<term.get_prompt();
     }
     return 0;
 }

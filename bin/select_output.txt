@@ -1,0 +1,13 @@
+dblite> Using database: test_db
+Switched to database: test_db
+Command executed in 114 microseconds.
+dblite(test_db)> [34mSelecting all rows from table [0mtest...
+id name score 
+1 Alice 90.5 
+2 Tom 89.3 
+3 Jack 98.3 
+2 Tom 89.3 
+3 Jack 98.3 
+1 Alice 90.5 
+Command executed in 35 microseconds.
+dblite(test_db)> 1 Alice 90.5 2 Tom 89.3 3 Jack 98.3 2 Tom 89.3 3 Jack 98.3 1 Alice 90.5 All tables saved successfully.

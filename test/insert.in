@@ -1,0 +1,1 @@
+use test_db;\ninsert into test values (1,"Alice",90.5);\ninsert into test values (2,"Tom",89.3);\ninsert into test values (3,"Jack",98.3);

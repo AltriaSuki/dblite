@@ -184,10 +184,11 @@ void terminal::run_command(const std::string& command){
             std::string value_str;
              iss >> value_str;
             record value;
-            if(is_int_(value_str)){
-                value = std::stoi(value_str);
-            }else if(is_double_(value_str)){
+            if(is_double_(value_str)){
                 value = std::stod(value_str);
+            }else if(is_int_(value_str)){
+                value = std::stoi(value_str);
+                std::cout<<value_str<<std::endl;
             }else if(auto quoted_value = in_quotation(value_str);quoted_value!=std::nullopt){
                 value = *quoted_value;
             }else{
@@ -667,7 +668,7 @@ void terminal::update_table(const std::string& table_name,const std::string& col
                 //判断列类型和条件类型是否相等
                if(cur_table->get_column_types()[coulmn_index]!=condition_type)
                {
-                std::cout<<type_to_string(cur_table->get_column_types()[coulmn_index])<<type_to_string(condition_type)<<std::endl;
+                std::cerr<<type_to_string(cur_table->get_column_types()[coulmn_index])<<type_to_string(condition_type)<<std::endl;
                 std::cerr << "\033[31mError: wrong type in condition.\033[0m" << std::endl;
                 return;
                }
