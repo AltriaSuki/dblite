@@ -22,10 +22,33 @@ class database {
         for(const auto& entry : std::filesystem::directory_iterator(db_path)){
             if(entry.is_regular_file() && entry.path().extension() == ".tbl"){
                 std::string table_name = entry.path().stem().string();//获取表名
+               
+              
                 auto new_table = std::make_shared<table>(table_name,entry.path());
                 tables[table_name] = new_table;
+               
             }
         }
         }
     void save_tables() const;
+
+
+     //new 5.31
+     std::string get_name()
+     {
+         return database_name;
+     }
+     std::shared_ptr<table>  get_table(std::string table_name)
+     {
+          if(tables.find(table_name) == tables.end())
+         {
+             std::cout << "Table " << table_name << " does not exist." << std::endl;
+             return nullptr;
+         }
+         else
+         {
+             return tables[ table_name];
+         }
+        
+     }
 };

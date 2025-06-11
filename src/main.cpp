@@ -28,4 +28,5 @@ int main(int argc,char* argv[]){
             }
         std::cout<<term.get_prompt();
     }
+    return 0;
 }

@@ -9,6 +9,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)        # <-- 可选：禁止 GNU 扩展（如 -std
 # 设置 Debug 模式
 set(CMAKE_BUILD_TYPE Debug)
 
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy")
+
 # 头文件路径
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
