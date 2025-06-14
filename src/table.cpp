@@ -120,14 +120,18 @@ void table::insert_row(const row& new_row,std::filesystem::path file_path)
         return;
     }
    else{
-    //如果有重复主建，则报错
-    for(auto & record:primary_key_index_map)
-    {
-        if(record.first == primary_key_data)
-        {
-            std::cerr << "primary key data already exists" << std::endl;
-            return;
-        }
+    // //如果有重复主建，则报错
+    // for(auto & record:primary_key_index_map)
+    // {
+    //     if(record.first == primary_key_data)
+    //     {
+    //         std::cerr << "primary key data already exists" << std::endl;
+    //         return;
+    //     }
+    // }
+    if(primary_key_index_map.find(primary_key_data) != primary_key_index_map.end()){
+        std::cerr << "Error: Primary key data already exists." << std::endl;
+        return;
     }
     //没有则插入，更新map索引
     data.insert(std::move(new_row_ptr));
