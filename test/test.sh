@@ -6,3 +6,4 @@
 ./test_delete.sh >> ./output.txt
 ./test_drop_table.sh >> ./output.txt
 ./test_drop_database.sh >> ./output.txt 
+./test_invalid_syntax.sh >> ./output.txt
